@@ -21,9 +21,18 @@ public class Main {
 //            CompletionServiceExample example=new CompletionServiceExample();
 //            example.run();
 
-             out.println(new Date());
-            ScheduledExecutorServiceExample scheduledExecutorServiceExample = new ScheduledExecutorServiceExample();
-            scheduledExecutorServiceExample.beepForAWhile();
+            out.println(new Date());
+//            ScheduledExecutorServiceExample scheduledExecutorServiceExample = new ScheduledExecutorServiceExample();
+//            scheduledExecutorServiceExample.beepForAWhile();
+//            ScheduledThreadPoolExecutorExample executorExample = new ScheduledThreadPoolExecutorExample();
+//            executorExample.run();
+
+//            FutureTaskExample futureTaskExample = new FutureTaskExample();
+//            futureTaskExample.run();
+
+            CompletableFutureExample completableFutureExample = new CompletableFutureExample();
+            completableFutureExample.run();
+
         } catch (Exception e) {
             out.println(e);
         }

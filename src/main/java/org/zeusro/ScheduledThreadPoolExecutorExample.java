@@ -19,8 +19,9 @@ public class ScheduledThreadPoolExecutorExample {
                 System.out.println(Thread.currentThread().getName() + " is Running Delayed Task");
             }
         };
-
-
+        ScheduledExecutorService scheduledPool = Executors.newScheduledThreadPool(4);
+        //延迟0秒,每1秒运行一次
+        scheduledPool.scheduleWithFixedDelay(runnabledelayedTask, 0, 1, TimeUnit.SECONDS);
         Callable callabledelayedTask = new Callable() {
 
             @Override
@@ -28,8 +29,7 @@ public class ScheduledThreadPoolExecutorExample {
                 return "GoodBye! See you at another invocation...";
             }
         };
-        ScheduledExecutorService scheduledPool = Executors.newScheduledThreadPool(4);
-        scheduledPool.scheduleWithFixedDelay(runnabledelayedTask, 1, 1, TimeUnit.SECONDS);
+        //延迟4秒后运行一次Callable
         ScheduledFuture sf = scheduledPool.schedule(callabledelayedTask, 4, TimeUnit.SECONDS);
         String value = (String) sf.get();
         System.out.println("Callable returned" + value);
