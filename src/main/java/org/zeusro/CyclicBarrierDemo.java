@@ -50,6 +50,13 @@ public class CyclicBarrierDemo {
     }
 
 
+    /**
+     * </br>
+     * 多线程聚合求和
+     *
+     * @param numWorkers             num workers
+     * @param numberOfPartialResults number of partial results
+     */
     public void runSimulation(int numWorkers, int numberOfPartialResults) {
         NUM_PARTIAL_RESULTS = numberOfPartialResults;
         NUM_WORKERS = numWorkers;
